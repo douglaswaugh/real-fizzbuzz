@@ -1,15 +1,24 @@
 using Xunit;
+using Shouldly;
 
 namespace fizzbuzz_tests
 {
+    public class FizzBuzz
+    {
+        public string Generate(int lowerBound, int upperBound)
+        {
+            return string.Empty;
+        }
+    }
+
     public class FizzBuzzTests
     {
         [Fact]
-        public void Should_return_numbers()
+        public void Should_return_empty_string_for_range_with_a_lower_bound_of_less_than_1()
         {
-            var something = "this";
+            var fizzBuzz = new FizzBuzz();
 
-            Assert.Equal(something, "thisd");
+            fizzBuzz.Generate(0, 0).ShouldBe(string.Empty);
         }
     }
 }

@@ -20,6 +20,14 @@ namespace fizzbuzz_tests
 
             fizzBuzz.Generate(0, 0).ShouldBe(string.Empty);
         }
+
+        [Fact]
+        public void Should_return_empty_string_for_range_with_an_upper_bound_less_than_the_lower_bound()
+        {
+            var fizzBuzz = new FizzBuzz();
+
+            fizzBuzz.Generate(1, 0).ShouldBe(string.Empty);
+        }
     }
 }
 

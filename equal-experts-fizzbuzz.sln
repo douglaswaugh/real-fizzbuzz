@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3FAE8BE4-15D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fizzbuzz", "src\fizzbuzz\fizzbuzz.csproj", "{9D108AF0-2AF0-4F7F-9964-EC953F7E5474}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5B3B3DAC-E317-4363-A5B8-9B1FBDD84DA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fizzbuzz-tests", "tests\fizzbuzz-tests\fizzbuzz-tests.csproj", "{39AC6058-056C-40D7-9E02-E4CAD783B035}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +36,21 @@ Global
 		{9D108AF0-2AF0-4F7F-9964-EC953F7E5474}.Release|x64.Build.0 = Release|x64
 		{9D108AF0-2AF0-4F7F-9964-EC953F7E5474}.Release|x86.ActiveCfg = Release|x86
 		{9D108AF0-2AF0-4F7F-9964-EC953F7E5474}.Release|x86.Build.0 = Release|x86
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Debug|x64.ActiveCfg = Debug|x64
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Debug|x64.Build.0 = Debug|x64
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Debug|x86.ActiveCfg = Debug|x86
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Debug|x86.Build.0 = Debug|x86
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Release|x64.ActiveCfg = Release|x64
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Release|x64.Build.0 = Release|x64
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Release|x86.ActiveCfg = Release|x86
+		{39AC6058-056C-40D7-9E02-E4CAD783B035}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9D108AF0-2AF0-4F7F-9964-EC953F7E5474} = {3FAE8BE4-15D6-453E-92C9-B23566BDAEFA}
+		{39AC6058-056C-40D7-9E02-E4CAD783B035} = {5B3B3DAC-E317-4363-A5B8-9B1FBDD84DA6}
 	EndGlobalSection
 EndGlobal

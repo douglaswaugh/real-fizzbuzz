@@ -7,7 +7,13 @@ namespace fizzbuzz_tests
     {
         public string Generate(int lowerBound, int upperBound)
         {
-            return string.Empty;
+            if (lowerBound <= 0)
+                return string.Empty;
+
+            if (upperBound < lowerBound)
+                return string.Empty;
+
+            return "1";
         }
     }
 
@@ -27,6 +33,15 @@ namespace fizzbuzz_tests
             var fizzBuzz = new FizzBuzz();
 
             fizzBuzz.Generate(1, 0).ShouldBe(string.Empty);
+        }
+
+        [Theory]
+        [InlineData(1,1,"1")]
+        public void Should_return_string_for_range(int lowerBound, int upperBound, string expected)
+        {
+            var fizzBuzz = new FizzBuzz();
+
+            fizzBuzz.Generate(1,1).ShouldBe(expected);
         }
     }
 }

@@ -12,6 +12,11 @@
       "isBuildCommand": true,
       "showOutput": "silent",
       "problemMatcher": "$msCompile"
+    },
+    {
+      "taskName": "run",
+      "args": [],
+      "showOutput": "always"
     }
   ]
 }

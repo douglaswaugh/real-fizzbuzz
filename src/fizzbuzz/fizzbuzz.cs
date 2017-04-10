@@ -2,23 +2,9 @@
 using System.Collections.Generic;
 
 namespace FizzBuzzLibrary
-{    
+{
     public class FizzBuzz
     {
-        private Dictionary<string, int> _wordTypeCount;
-
-        public FizzBuzz()
-        {
-             _wordTypeCount = new Dictionary<string, int>
-             {
-                {"fizz", 0},
-                {"buzz", 0},
-                {"fizzbuzz", 0},
-                {"lucky", 0},
-                {"integer", 0},
-             };
-        }
-
         public string Generate(int lowerBound, int upperBound)
         {
             if (lowerBound <= 0)
@@ -27,44 +13,42 @@ namespace FizzBuzzLibrary
             if (upperBound < lowerBound)
                 return string.Empty;
 
-            var fizzbuzz = Enumerable.Range(lowerBound, (upperBound - lowerBound) + 1)
-                .Select(number => ConvertNumberToWord(number))
-                .Aggregate((aggregated, word) => aggregated + " " + word);
+            var words = Enumerable.Range(lowerBound, (upperBound - lowerBound) + 1)
+                .Select(number => ConvertNumberToWord(number));
 
-            var report = _wordTypeCount
-                .Select(keyValuePair => keyValuePair.Key + ": " + keyValuePair.Value.ToString())
-                .Aggregate((aggregated, reportItem) => aggregated + " " + reportItem);
+            return BuildFizzBuzzView(words) + " " + BuildReportView(words);
+        }
 
-            return (fizzbuzz + " " + report).TrimEnd();
+        private string BuildFizzBuzzView(IEnumerable<string> words)
+        {
+            return words.Aggregate((aggregated, word) => aggregated + " " + word);
+        }
+
+        private string BuildReportView(IEnumerable<string> words)
+        {
+            var fizzCount = words.Where(word => word == "fizz").Count();
+            var buzzCount = words.Where(word => word == "buzz").Count();
+            var fizzBuzzCount = words.Where(word => word == "fizzbuzz").Count();
+            var luckyCount = words.Where(word => word == "lucky").Count();
+            var integerCount = words.Count() - fizzCount - buzzCount - fizzBuzzCount - luckyCount;
+
+            return string.Format("fizz: {0} buzz: {1} fizzbuzz: {2} lucky: {3} integer: {4}", fizzCount, buzzCount, fizzBuzzCount, luckyCount, integerCount);
         }
 
         private string ConvertNumberToWord(int number)
         {
             if (number.ToString().Contains('3'))
-            {
-                _wordTypeCount["lucky"] += 1;
                 return "lucky";
-            }
 
             if (number % 5 == 0 && number % 3 == 0)
-            {
-                _wordTypeCount["fizzbuzz"] += 1;
                 return "fizzbuzz";
-            }
 
             if (number % 5 == 0)
-            {
-                _wordTypeCount["buzz"] += 1;
                 return "buzz";
-            }
 
             if (number % 3 == 0)
-            {
-                _wordTypeCount["fizz"] += 1;
                 return "fizz";
-            }
 
-            _wordTypeCount["integer"] += 1;
             return number.ToString();
         }
     }

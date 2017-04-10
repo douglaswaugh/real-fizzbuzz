@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace fizzbuzz
+namespace FizzBuzzLibrary
 {    
     public class FizzBuzz
     {

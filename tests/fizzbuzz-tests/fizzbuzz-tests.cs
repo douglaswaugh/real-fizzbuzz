@@ -1,8 +1,8 @@
 using Xunit;
 using Shouldly;
-using fizzbuzz;
+using FizzBuzzLibrary;
 
-namespace fizzbuzz_tests
+namespace FizzBuzzTests
 {
     public class FizzBuzzTests
     {
@@ -36,8 +36,3 @@ namespace fizzbuzz_tests
         }
     }
 }
-
-// for numbers that are multiples of 3 write fizz
-// for numbers that are multiples of 5 write buzz
-// for numbers that are multiples of both 3 and 5 write fizzbuzz
-// for all other numbers write the number 

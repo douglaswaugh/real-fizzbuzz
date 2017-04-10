@@ -1,3 +1,4 @@
+using System.Linq;
 using Xunit;
 using Shouldly;
 
@@ -13,7 +14,15 @@ namespace fizzbuzz_tests
             if (upperBound < lowerBound)
                 return string.Empty;
 
-            return "1";
+            return Enumerable.Range(lowerBound, (upperBound - lowerBound) + 1)
+                .Select(number => ConvertNumberToWord(number))
+                .Aggregate((fizzBuzz, word) => fizzBuzz + " " + word)
+                .TrimEnd();
+        }
+
+        private string ConvertNumberToWord(int number)
+        {
+            return number.ToString();
         }
     }
 
@@ -37,11 +46,12 @@ namespace fizzbuzz_tests
 
         [Theory]
         [InlineData(1,1,"1")]
+        [InlineData(1,2,"1 2")]
         public void Should_return_string_for_range(int lowerBound, int upperBound, string expected)
         {
             var fizzBuzz = new FizzBuzz();
 
-            fizzBuzz.Generate(1,1).ShouldBe(expected);
+            fizzBuzz.Generate(lowerBound, upperBound).ShouldBe(expected);
         }
     }
 }

@@ -20,6 +20,9 @@ namespace FizzBuzzLibrary
 
         private string ConvertNumberToWord(int number)
         {
+            if (number.ToString().Contains('3'))
+                return "lucky";
+
             if (number % 5 == 0 && number % 3 == 0)
                 return "fizzbuzz";
 

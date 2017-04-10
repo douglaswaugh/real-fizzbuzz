@@ -24,7 +24,7 @@ namespace fizzbuzz_tests
         {
             if (number % 3 == 0)
                 return "fizz";
-                
+
             return number.ToString();
         }
     }
@@ -48,9 +48,9 @@ namespace fizzbuzz_tests
         }
 
         [Theory]
-        [InlineData(1,1,"1")]
-        [InlineData(1,2,"1 2")]
-        [InlineData(1,3,"1 2 fizz")]
+        [InlineData(1, 1, "1")]
+        [InlineData(1, 2, "1 2")]
+        [InlineData(1, 3, "1 2 fizz")]
         public void Should_return_string_for_range(int lowerBound, int upperBound, string expected)
         {
             var fizzBuzz = new FizzBuzz();

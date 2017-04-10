@@ -23,11 +23,11 @@ namespace FizzBuzzTests
         }
 
         [Theory]
-        [InlineData(1, 1, "1")]
-        [InlineData(1, 2, "1 2")]
-        [InlineData(1, 3, "1 2 lucky")]
-        [InlineData(1, 5, "1 2 lucky 4 buzz")]
-        [InlineData(1, 15, "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz")]
+        [InlineData(1, 1, "1 fizz: 0 buzz: 0 fizzbuzz: 0 lucky: 0 integer: 1")]
+        [InlineData(1, 2, "1 2 fizz: 0 buzz: 0 fizzbuzz: 0 lucky: 0 integer: 2")]
+        [InlineData(1, 3, "1 2 lucky fizz: 0 buzz: 0 fizzbuzz: 0 lucky: 1 integer: 2")]
+        [InlineData(1, 5, "1 2 lucky 4 buzz fizz: 0 buzz: 1 fizzbuzz: 0 lucky: 1 integer: 3")]
+        [InlineData(1, 15, "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz fizz: 3 buzz: 2 fizzbuzz: 1 lucky: 2 integer: 7")]
         public void Should_return_string_for_range(int lowerBound, int upperBound, string expected)
         {
             var fizzBuzz = new FizzBuzz();

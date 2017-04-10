@@ -22,9 +22,12 @@ namespace fizzbuzz_tests
 
         private string ConvertNumberToWord(int number)
         {
+            if (number % 5 == 0 && number % 3 == 0)
+                return "fizzbuzz";
+
             if (number % 5 == 0)
                 return "buzz";
-                
+
             if (number % 3 == 0)
                 return "fizz";
 
@@ -55,6 +58,7 @@ namespace fizzbuzz_tests
         [InlineData(1, 2, "1 2")]
         [InlineData(1, 3, "1 2 fizz")]
         [InlineData(1, 5, "1 2 fizz 4 buzz")]
+        [InlineData(1, 15, "1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz")]
         public void Should_return_string_for_range(int lowerBound, int upperBound, string expected)
         {
             var fizzBuzz = new FizzBuzz();
